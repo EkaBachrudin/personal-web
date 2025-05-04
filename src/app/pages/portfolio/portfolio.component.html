@@ -1,0 +1,79 @@
+<div class="container-fluid mx-auto" [ngClass]="dark ? 'dark' : ''">
+  <div class="flex flex-wrap lg:h-screen">
+    <div class="bg-stone-200 dark:bg-black dark:text-white grid w-full lg:w-4/12 lg:relative">
+      <div class="p-10 text-center lg:text-left lg:fixed lg:top-1/2 lg:left-20">
+       <div class="flex justify-between mb-5 ">
+        <button (click)="changeMode()" class="p-4" [ngClass]="dark ? 'sun text-white' : 'moon text-white'"></button>
+        <div class="lang-cont flex border border-stone-700 dark:border-white items-center cursor-pointer" #toggleButton (click)="openToggleLang()"> <img class="mr-1 w-5" src="{{dark ? '/assets/language-white.svg' : '/assets/language.svg'}}" alt="icon"> {{'lang' | translate}} </div>
+        <div class="lang-select bg-stone-200 border dark:bg-black border-stone-700 dark:border-white transform-gputransform-gpu" #menu [ngClass]="{'scale-y-100': isLangToggleActive, 'scale-y-0': !isLangToggleActive}">
+          <div class="inner px-2 py-1 border-stone-700 dark:border-white flex cursor-pointer" (click)="changeLang('id')">
+            <img class="mr-1 w-5" src="{{dark ? '/assets/globe-white.svg' : '/assets/globe.svg'}}"> Indonesia
+          </div>
+          <div class="inner px-2 py-1 border-stone-700 dark:border-white flex cursor-pointer" (click)="changeLang('en')">
+            <img class="mr-1 w-5" src="{{dark ? '/assets/globe-white.svg' : '/assets/globe.svg'}}"> English
+          </div>
+        </div>
+       </div>
+        <h1 class="text-3xl">Eka Bachrudin</h1>
+        <p>Front-End Web Developer</p>
+      </div>
+    </div>
+
+    <div class="relative w-full p-10 lg:w-8/12 lg:p-28 space-y-10 dark:bg-gradient-to-b dark:from-stone-700 dark:to-stone-800 dark:text-white h-screen">
+      <div>
+        <h1 class="text-3xl">My Personal Portfolio</h1>
+        <!-- <h1 class="text-2xl">My Personal Portfolio</h1> -->
+      </div>
+
+      <div>
+        <p>{{'portoDesc' | translate}}</p>
+      </div>
+
+      <div>
+        <h1 class="text-1xl"><strong>Public Portfolio</strong></h1>
+        <ul class="space-y-3 mt-4 lg:text-base text-sm">
+          <li class="border-b-2 border-slate-200 dark:border-stone-500 flex gap-3">
+            <span>
+              <a href="https://graparionline.telkomsel.com/" target="_blank" class="hover:underline hover:text-stone-400">
+                Telkomsel Grapari Online
+              </a>
+            </span>
+            <em class="text-slate-400 dark:text-stone-400">
+              (NextJs)
+            </em>
+          </li>
+          <li class="border-b-2 border-slate-200 dark:border-stone-500 flex gap-3">
+            <span>
+              <a href="https://standalone-mocha.vercel.app/" target="_blank" class="hover:underline hover:text-stone-400">
+                Personal e-commerce project
+              </a>
+            </span>
+            <em class="text-slate-400 dark:text-stone-400">
+              (NextJs)
+            </em>
+          </li>
+          <li class="border-b-2 border-slate-200 dark:border-stone-500 flex gap-3">
+            <span>
+              <a href="https://www.telkomsel.com/shops/bundling/" target="_blank" class="hover:underline hover:text-stone-400">
+                Telkomsel Device Bundling
+              </a>
+            </span>
+            <em class="text-slate-400 dark:text-stone-400">
+              (Angular)
+            </em>
+          </li>
+          <li class="border-b-2 border-slate-200 dark:border-stone-500 flex gap-3">
+            <span>
+              <a href="https://www.telkomsel.com/shops/preorder-wna/locations/" target="_blank" class="hover:underline hover:text-stone-400">
+                Grapari Online For Wna
+              </a>
+            </span>
+            <em class="text-slate-400 dark:text-stone-400">
+              (Angular)
+            </em>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
