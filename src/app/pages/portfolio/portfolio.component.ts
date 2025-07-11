@@ -36,7 +36,7 @@ export class PortfolioComponent implements OnInit {
       ngOnInit(): void {
         let mode = localStorage.getItem('mode');
         !mode
-          ? localStorage.setItem('mode', 'light')
+          ? localStorage.setItem('mode', 'dark')
           : (this.dark = mode == 'dark' ? true : false);
         this.lang ? this.translate.use(this.lang) : this.translate.use('en');
       }
